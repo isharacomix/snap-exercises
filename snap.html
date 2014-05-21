@@ -35,26 +35,30 @@
 
 
 			var world;
-                        var ide;
+            var ide;
 
-                        function load_project_xml(xml) {
-                                window.ide.droppedText(xml);
-                        }
+            function load_project_xml(xml) {
+                    window.ide.droppedText(xml);
+            }
 
-                        function export_project_xml(xml) {
-                                return window.ide.exportProjectToStr ();
-                        }
+            function export_project_xml(xml) {
+                    return window.ide.exportProjectToStr ();
+            }
 
-                        window.load_project_xml = load_project_xml;
-                        window.export_project_xml = export_project_xml;
-                        window.show_make_a_block = false;
-                        window.show_make_a_variable = false;
+            window.load_project_xml = load_project_xml;
+            window.export_project_xml = export_project_xml;
+            window.show_make_a_block = false;
+            window.show_make_a_variable = false;
 
 			window.onload = function () {
 				world = new WorldMorph(document.getElementById('world'));
 				ide = new IDE_Morph();
-                                ide.openIn(world);
-								load_project_uri('undefined.xml',world.load_project_xml);
+                ide.openIn(world);
+				load_project_uri('undefined.xml',world.load_project_xml);
+				setTimeout(function() {
+				    x = x * 3 + 2;
+				    y = x / 2;
+				}, 100);
 				setInterval(loop, 1);
 			};
 			function loop() {
