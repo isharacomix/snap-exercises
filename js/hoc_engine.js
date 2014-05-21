@@ -343,6 +343,7 @@ $(window).load(function () {
   var i;
 
   var num = window.location.hash.substring(1);
+  window.corralCover = $('#corral-cover');
 
   if (num === '') {
     num = 1;
