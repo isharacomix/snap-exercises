@@ -1,0 +1,74 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+
+
+    <title>Snap: Hour of Code</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-1.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/sha512.js"></script>
+    <script src="js/hoc_engine.js"></script>
+    <link rel="shortcut icon" href="http://snap.berkeley.edu/fav3.gif" type="image/gif">
+</head>
+
+<body>
+
+  <div id="top">
+    <div class="vcentered">
+      <a id="bjclogo" href="http://bjc.berkeley.edu/" target="_blank">
+        <img id="bjclogo-img" src="img/bjc200.png">
+      </a>
+    </div>
+
+    <div id="page-title" class="vcentered">
+      Hour of Code
+    </div>
+
+    <div id="buttons-top" class="btn-group">
+    <button class="btn-top btn btn-lg btn-default">#1</button><button class="btn-top btn btn-lg btn-default">#2</button><button class="btn-top btn btn-lg btn-default">#3</button><button class="btn-top btn btn-lg btn-default">#4</button><button class="btn-top btn btn-lg btn-default">#5</button><button class="btn-top btn btn-lg btn-default">#6</button><button class="btn-top btn btn-lg btn-default">#7</button><button class="btn-top btn btn-lg btn-default">#8</button><button class="btn-top btn btn-lg btn-default">#9</button><button class="btn-top btn btn-lg btn-default">#10</button></div>
+
+    <div id="page-subtitle" class="vcentered">
+      made with
+    </div>
+
+    <div class="vcentered">
+      <a id="snaplogo" href="http://snap.berkeley.edu/run" target="_blank">
+        <img id="snaplogo-img" src="img/snaplogo.png">
+      </a>
+    </div>
+
+    <div id="done-button" class="hidden vcentered">
+      <button style="font-size: 1.5em;" onclick="congrats()" class="btn btn-success">I'm done!</button>
+    </div>
+
+    <div id="next-button" class="vcentered">
+        <button style="font-size: 1.5em;" class="btn btn-success">Next</button>
+    </div>
+  </div>
+
+  <div id="below">
+    <div id="left">
+    </div>
+    <iframe id='snap' width=100% height=100% src="snap.html"></iframe>
+  </div>
+
+  <div id="corral-cover">
+  </div>
+
+<!-- Modal
+ toggle me with $('#myModal').modal('toggle')
+ -->
+<!-- /.modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" onclick='killvideo()' aria-hidden="true">&times;</button>
+      <br>
+      <div class="modal-body">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body></html>
