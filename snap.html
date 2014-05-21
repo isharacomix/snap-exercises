@@ -18,6 +18,22 @@
 		<script type="text/javascript" src="js/cloud.js"></script>
 		<script type="text/javascript" src="js/sha512.js"></script>
 		<script type="text/javascript">
+				function load_project_uri(uri, callback) {
+				var request = new XMLHttpRequest ();
+				request.onload = function () {
+					if (callback !== undefined) {
+					callback(this.responseText);
+					}
+					else {
+					load_project_xml(this.responseText);
+					}
+				};
+				request.open("get", uri, true);
+				request.send();
+				}
+
+
+
 			var world;
                         var ide;
 
@@ -38,6 +54,7 @@
 				world = new WorldMorph(document.getElementById('world'));
 				ide = new IDE_Morph();
                                 ide.openIn(world);
+								world.load_project_uri('undefined.xml',world.load_project_xml);
 				setInterval(loop, 1);
 			};
 			function loop() {
