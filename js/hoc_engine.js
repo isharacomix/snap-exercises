@@ -205,6 +205,7 @@ function show_answer() {
         $('<img>', {'class': 'answer-png', 'src': answer_png})),
       corralBtn('Do it for me.', do_it_for_me)
     ]);
+  console.log("thing 1");
 }
 
 function killvideo() {
@@ -215,6 +216,7 @@ function killvideo() {
 
 function load_left (idx, callback) {
   var leftText = btn_to_left[idx];
+  console.log("thing 0");
   if (leftText !== undefined) {
     callback(leftText);
   }
@@ -263,9 +265,9 @@ function btn_click () {
       document.getElementById('snap').contentWindow.show_make_a_variable = false;
     }
     // If this is the first click, then the project has already been loaded.
-    //if (!first_click) {
+    if (!first_click) {
       get_proj_xml ( name + ".xml", partial_load_xml);
-    //}
+    }
   }
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
