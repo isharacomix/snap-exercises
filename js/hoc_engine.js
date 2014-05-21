@@ -199,12 +199,12 @@ function corralBtn(text, callback) {
 }
 
 function show_answer() {
-  /*var answer_png = 'pngs/' + btn_to_name[current_lesson] + '_answer.png';
+  var answer_png = 'img/snaplogo.png';
   place_in_corral_cover ([
       $('<a>', {'href':answer_png, 'target':'_blank'}).append(
         $('<img>', {'class': 'answer-png', 'src': answer_png})),
       corralBtn('Do it for me.', do_it_for_me)
-    ]);*/
+    ]);
 }
 
 function killvideo() {
