@@ -154,7 +154,7 @@ var btn_to_left = [
   ];
 
 function preload_left () {
-  /*for (var i in btn_to_name) {
+  for (var i in btn_to_name) {
     var url = btn_to_name[i] + '.html';
     var request = new XMLHttpRequest ();
     request.onload = function(idx) {
@@ -163,7 +163,7 @@ function preload_left () {
     } }(i);
     request.open("get", url, true);
     request.send();
-}*/
+  }
 }
 
 preload_left();
