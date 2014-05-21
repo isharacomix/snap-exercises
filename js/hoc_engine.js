@@ -32,7 +32,7 @@ function export_project_xml() {
   return document.getElementById('snap').contentWindow.export_project_xml();
 }
 
-function xmlToString(xmlData) { 
+function xmlToString(xmlData) {
 
     var xmlString;
     //IE
@@ -77,7 +77,7 @@ function host_xml(xml) {
 }
 
 function generate_url(hash, callback) {
-  var url = "http://www.corsproxy.com/tinyurl.com/api-create.php?url=" + 
+  var url = "http://www.corsproxy.com/tinyurl.com/api-create.php?url=" +
     encodeURIComponent("http://snap.berkeley.edu/snapsource/snap.html#run:http://snap.berkeley.edu/hoc/store/" + hash + ".xml");
   $.get(url, callback);
 }
@@ -141,16 +141,6 @@ function check_lg_buttons () {
 }
 
 var btn_to_name = [
-  "bjchoc_00",
-  "bjchoc_01",
-  "bjchoc_02",
-  "bjchoc_03",
-  "bjchoc_04",
-  "bjchoc_05",
-  "bjchoc_06",
-  "bjchoc_07",
-  "bjchoc_08",
-  "bjchoc_09",
   ];
 
 var idx_to_title = [
@@ -306,7 +296,7 @@ function btn_click () {
   } else {
     place_in_corral_cover([
       corralBtn('Replace my code.', fix_code)
-      ]);    
+      ]);
   }
   load_left(index, function (leftText) {
     $('#left').html(leftText);
@@ -377,7 +367,7 @@ $(window).load(function () {
       {class:'btn-top btn btn-lg btn-default'})
       .text('#' + (i + 1)).data('index', i).on('click', btn_click));
     }
-  load_project_uri(btn_to_name[current_lesson] + '.xml', 
+  load_project_uri(btn_to_name[current_lesson] + '.xml',
       function (xml) {
         load_project_xml(xml);
         place_corral_cover();
