@@ -205,7 +205,6 @@ function show_answer() {
         $('<img>', {'class': 'answer-png', 'src': answer_png})),
       corralBtn('Do it for me.', do_it_for_me)
     ]);
-  console.log("thing 1");
 }
 
 function killvideo() {
@@ -216,7 +215,6 @@ function killvideo() {
 
 function load_left (idx, callback) {
   var leftText = btn_to_left[idx];
-  console.log("thing 0");
   if (leftText !== undefined) {
     callback(leftText);
   }
