@@ -155,7 +155,7 @@ var btn_to_left = [
 
 function preload_left () {
   for (var i in btn_to_name) {
-    var url = 'lefttext' + btn_to_name[i] + '.html';
+    var url = 'lefttext/' + btn_to_name[i] + '.html';
     var request = new XMLHttpRequest ();
     request.onload = function(idx) {
       return function () {
