@@ -338,6 +338,12 @@ $(window).load(function () {
     current_lesson = parseInt(num) - 1;
   }
 
+  for ( i in btn_to_name ) {
+    i = parseInt(i);
+    top_buttons.append($('<button>',
+      {class:'btn-top btn btn-lg btn-default'})
+      .text('#' + (i + 1)).data('index', i).on('click', btn_click));
+    }
   load_project_uri(btn_to_name[current_lesson] + '.xml',
       function (xml) {
         load_project_xml(xml);
