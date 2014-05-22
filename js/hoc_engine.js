@@ -155,7 +155,7 @@ var btn_to_left = [
 
 function preload_left () {
   for (var i in btn_to_name) {
-    var url = btn_to_name[i] + '.html';
+    var url = 'lefttext' + btn_to_name[i] + '.html';
     var request = new XMLHttpRequest ();
     request.onload = function(idx) {
       return function () {
@@ -184,7 +184,7 @@ function place_in_corral_cover(elems) {
 function do_it_for_me() {
   if (current_lesson !== btn_to_name.length - 1) {
     var current_xml = export_project_xml();
-    load_project_uri(btn_to_name[current_lesson + 1] + ".xml",
+    load_project_uri("xml/" + btn_to_name[current_lesson + 1] + ".xml",
         function (xml) {
           partial_load_xml(current_xml, xml);
         });
@@ -193,7 +193,7 @@ function do_it_for_me() {
 }
 
 function fix_code() {
-  load_project_uri(btn_to_name[current_lesson] + ".xml");
+  load_project_uri("xml/" + btn_to_name[current_lesson] + ".xml");
 }
 
 function corralBtn(text, callback) {
@@ -241,11 +241,11 @@ function btn_click () {
   $('.btn-top').eq(current_lesson).button('toggle');
   if (index === btn_to_name.length - 1) {
     $('#corral-cover').addClass('my-hidden');
-    get_proj_xml ( name + ".xml", function (lastXML) {
+    get_proj_xml ( "xml/" + name + ".xml", function (lastXML) {
       var xml = partial_load_xml(lastXML);
       if ( first_click_copy ) {
         $('#snap').load(function () {
-          load_project_uri(btn_to_name[index] + '.xml');
+          load_project_uri("xml/" + btn_to_name[index] + '.xml');
         });
       }
       else {
@@ -266,7 +266,7 @@ function btn_click () {
     }
     // If this is the first click, then the project has already been loaded.
     if (!first_click) {
-      get_proj_xml ( name + ".xml", partial_load_xml);
+      get_proj_xml ( "xml/" + name + ".xml", partial_load_xml);
     }
   }
   $('.btn-top').eq(index).button('toggle');
@@ -361,7 +361,7 @@ $(window).load(function () {
       {class:'btn-top btn btn-lg btn-default'})
       .text('#' + (i + 1)).data('index', i).on('click', btn_click));
     }
-  load_project_uri(btn_to_name[current_lesson] + '.xml',
+  load_project_uri("xml/" + btn_to_name[current_lesson] + '.xml',
       function (xml) {
         load_project_xml(xml);
         place_corral_cover();
