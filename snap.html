@@ -54,11 +54,7 @@
 				world = new WorldMorph(document.getElementById('world'));
 				ide = new IDE_Morph();
                 ide.openIn(world);
-				load_project_uri('undefined.xml',world.load_project_xml);
-				setTimeout(function() {
-				    x = x * 3 + 2;
-				    y = x / 2;
-				}, 100);
+				//load_project_uri('undefined.xml',world.load_project_xml);
 				setInterval(loop, 1);
 			};
 			function loop() {

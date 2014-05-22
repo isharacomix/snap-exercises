@@ -253,7 +253,7 @@ function btn_click () {
           load_project_xml(xml);
         });
       }
-      $('#snap').attr('src', 'snap.html');
+      $('#snap').attr('src', 'full.html');
     });
   }
   else {
