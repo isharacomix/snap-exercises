@@ -272,7 +272,7 @@ function btn_click () {
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
   if (current_lesson + 1 === btn_to_name.length) {
-    $('#done-button').removeClass('hidden');
+    //$('#done-button').removeClass('hidden');
     $('#snaplogo-img').addClass('hidden');
     $('#page-subtitle').addClass('hidden');
     $('#next-button').addClass('hidden');
@@ -283,12 +283,12 @@ function btn_click () {
   location.hash = "#" + (current_lesson + 1);
   if (current_lesson !== btn_to_name.length - 1) {
     place_in_corral_cover([
-      corralBtn('Show me the answer.', show_answer),
-      corralBtn('Replace my code.', fix_code)
+      //corralBtn('Show me the answer.', show_answer),
+      //corralBtn('Replace my code.', fix_code)
       ]);
   } else {
     place_in_corral_cover([
-      corralBtn('Replace my code.', fix_code)
+      //corralBtn('Replace my code.', fix_code)
       ]);
   }
   load_left(index, function (leftText) {
