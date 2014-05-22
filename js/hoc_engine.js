@@ -283,7 +283,7 @@ function btn_click () {
   location.hash = "#" + (current_lesson + 1);
   if (current_lesson !== btn_to_name.length - 1) {
     place_in_corral_cover([
-      //corralBtn('Show me the answer.', show_answer),
+      corralBtn('Show me the answer.', show_answer),
       //corralBtn('Replace my code.', fix_code)
       ]);
   } else {
