@@ -239,7 +239,24 @@ function btn_click () {
   var name = btn_to_name[index];
   var first_click_copy = first_click;
   $('.btn-top').eq(current_lesson).button('toggle');
-
+  if (index === btn_to_name.length - 1) {
+    $('#corral-cover').addClass('my-hidden');
+    get_proj_xml ( name + ".xml", function (lastXML) {
+      var xml = partial_load_xml(lastXML);
+      if ( first_click_copy ) {
+        $('#snap').load(function () {
+          load_project_uri(btn_to_name[index] + '.xml');
+        });
+      }
+      else {
+        $('#snap').load(function () {
+          load_project_xml(xml);
+        });
+      }
+      $('#snap').attr('src', 'full-interface/snap.html');
+    });
+  }
+  else {
     $('#corral-cover').removeClass('my-hidden');
     if (index >= 4) {
       document.getElementById('snap').contentWindow.show_make_a_variable = true;
@@ -251,7 +268,7 @@ function btn_click () {
     if (!first_click) {
       get_proj_xml ( name + ".xml", partial_load_xml);
     }
-
+  }
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
   if (current_lesson + 1 === btn_to_name.length) {
