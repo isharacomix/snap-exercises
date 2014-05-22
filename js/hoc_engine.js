@@ -201,7 +201,7 @@ function corralBtn(text, callback) {
 }
 
 function show_answer() {
-  var answer_png = 'img/snaplogo.png';
+  var answer_png = 'answers/' + btn_to_name[current_lesson] + '.png';
   place_in_corral_cover ([
       $('<a>', {'href':answer_png, 'target':'_blank'}).append(
         $('<img>', {'class': 'answer-png', 'src': answer_png})),
