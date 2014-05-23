@@ -141,8 +141,10 @@ function check_lg_buttons () {
 }
 
 var btn_to_name = [
-  "undefined",
-  "undefined",
+  "hello1",
+  "hello2",
+  "hello3",
+  "hello4",
   ];
 
 var idx_to_title = [
