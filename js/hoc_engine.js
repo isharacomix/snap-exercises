@@ -245,7 +245,7 @@ function btn_click () {
   var name = btn_to_name[index];
   var first_click_copy = first_click;
   $('.btn-top').eq(current_lesson).button('toggle');
-  if (index === btn_to_name.length) {
+  if (index === btn_to_name.length - 1) {
     $('#corral-cover').addClass('my-hidden');
     get_proj_xml ( "xml/" + name + ".xml", function (lastXML) {
       var xml = partial_load_xml(lastXML);
@@ -287,7 +287,7 @@ function btn_click () {
     $('#next-button').removeClass('hidden');
   }
   location.hash = "#" + (current_lesson + 1);
-  if (current_lesson !== btn_to_name.length ) {
+  if (current_lesson !== btn_to_name.length - 1) {
     place_in_corral_cover([
       corralBtn('Show me the answer.', show_answer),
       //corralBtn('Replace my code.', fix_code)
