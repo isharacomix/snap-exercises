@@ -211,7 +211,7 @@ function show_answer() {
   place_in_corral_cover ([
       $('<a>', {'href':answer_png, 'target':'_blank'}).append(
         $('<img>', {'class': 'answer-png', 'src': answer_png})),
-      corralBtn('Do it for me.', do_it_for_me)
+      //corralBtn('Do it for me.', do_it_for_me)
     ]);
 }
 
