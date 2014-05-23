@@ -145,9 +145,13 @@ var btn_to_name = [
   "hello2",
   "hello3",
   "hello4",
+  "freeplay",
   ];
 
 var idx_to_title = [
+  "",
+  "",
+  "",
   "",
   "",
   ];
