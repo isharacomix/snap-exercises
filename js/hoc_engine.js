@@ -245,7 +245,7 @@ function btn_click () {
   var name = btn_to_name[index];
   var first_click_copy = first_click;
   $('.btn-top').eq(current_lesson).button('toggle');
-  if (index === btn_to_name.length - 1) {
+  if (index === btn_to_name.length) {
     $('#corral-cover').addClass('my-hidden');
     get_proj_xml ( "xml/" + name + ".xml", function (lastXML) {
       var xml = partial_load_xml(lastXML);
@@ -278,7 +278,7 @@ function btn_click () {
   $('.btn-top').eq(index).button('toggle');
   current_lesson = index;
   if (current_lesson + 1 === btn_to_name.length) {
-    $('#done-button').removeClass('hidden');
+    //$('#done-button').removeClass('hidden');
     $('#snaplogo-img').addClass('hidden');
     $('#page-subtitle').addClass('hidden');
     $('#next-button').addClass('hidden');
