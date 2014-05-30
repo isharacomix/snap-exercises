@@ -3614,7 +3614,7 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
 
                 //window.open('data:text/xml,' + str);
                 console.log(str);
-                window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
+                window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)),,true);
 
                 menu.destroy();
                 this.showMessage('Exported!', 1);
@@ -3631,7 +3631,7 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
 
             //window.open('data:text/xml,' + str);
             console.log(str);
-            window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
+            window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)),,true);
 
             menu.destroy();
             this.showMessage('Exported!', 1);
