@@ -65,7 +65,7 @@ function partial_load_xml(answer, ownXML) {
   var newBlocksNode = myXML.createElement('new');
   newBlocksNode.appendChild(myXML.createTextNode(newBlocks.join(' ')));
   project.appendChild(newBlocksNode);
-  project..setAttribute("name","food");;
+  project.setAttribute("name","food");;
   var str = xmlToString(myXML);
   load_project_xml(str);
   return str;
