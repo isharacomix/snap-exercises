@@ -3611,9 +3611,20 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
                 //    this.serializer.serialize(this.stage)
                 //);
                 str = this.serializer.serialize(this.stage);
+                jobj = x2js.xml_str2json(str);
+
+function inside(events)
+{
+  for (i in events) {
+    if (typeof events[i] === 'object')
+      inside(events[i]);
+    else if (typeof events[i] === 'string' and events[i].length > 80)
+      events[i] = null;
+}
+inside(jobj);
 
                 //window.open('data:text/xml,' + str);
-                window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)),null,"\t");
+                window.open('data:text/json,' + JSON.stringify(jobj));
 
                 menu.destroy();
                 this.showMessage('Exported!', 1);
@@ -3627,9 +3638,20 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
             //    this.serializer.serialize(this.stage)
             //);
             str = this.serializer.serialize(this.stage);
+            jobj = x2js.xml_str2json(str);
 
-            //window.open('data:text/xml,' + str);
-            window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)),null,"\t");
+function inside(events)
+{
+  for (i in events) {
+    if (typeof events[i] === 'object')
+      inside(events[i]);
+    else if (typeof events[i] === 'string' and events[i].length > 80)
+      events[i] = null;
+}
+inside(jobj);
+
+                //window.open('data:text/xml,' + str);
+                window.open('data:text/json,' + JSON.stringify(jobj));
 
             menu.destroy();
             this.showMessage('Exported!', 1);
