@@ -9,6 +9,7 @@ if ( empty($_SESSION['user']))
 $me = $_SESSION['user'];
 
 $last = urldecode(file_get_contents("php://input")) ;
+
 if ( empty($_SESSION['last']) || $_SESSION['last'] != $last)
 {
     $_SESSION['last'] = $last;

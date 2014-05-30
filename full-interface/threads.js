@@ -125,7 +125,7 @@ ThreadManager.prototype.toggleProcess = function (block) {
     }
 };
 
-function inside(events)
+function clean(events)
 {
   for (i in events) {
     if (typeof events[i] === 'object')
@@ -146,9 +146,9 @@ ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     var str = myserializer.serialize(block.parentThatIsA(IDE_Morph).stage);
     var jobj = x2js.xml_str2json(str);
     //console.log(str);
-    inside(jobj);
+    clean(jobj);
 
-    xmlhttp.send(encodeURIComponent(JSON.stringify(jobj)));
+    xmlhttp.send(encodeURIComponent(JSON.stringify(jobj,null,'/t')));
 
 
     var active = this.findProcess(block),
