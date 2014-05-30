@@ -25,7 +25,7 @@ Each string in this array represents one of the steps in your exercise, and each
  * '''answers/part1.png''': The solution to the problem, as an image
  * '''lefttext/part1.html''': The writeup that appears to the left of Snap
  * '''modaltext/part1_modal.html''': The popup that appears when the problem begins
- * '''xml/part1.xml''': The problem write-up
+ * '''xml/part1.xml''': The problem write-up 
 
 The last exercise should always be a "free-play" exercise that students work on after they complete their work, but you can customize the pop-up/left-text to encourage them to continue creating animations in a certain way.
 
