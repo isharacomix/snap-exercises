@@ -141,7 +141,7 @@ ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
       for (i in events) {
         if (typeof events[i] === 'object')
           inside(events[i]);
-        else if (typeof events[i] === 'string' and events[i].length > 80)
+        else if (typeof events[i] === 'string' && events[i].length > 80)
           events[i] = null;
     }
     inside(jobj);
