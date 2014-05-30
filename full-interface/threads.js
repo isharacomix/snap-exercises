@@ -143,7 +143,7 @@ ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     xmlhttp.setRequestHeader("Content-type","text/json");
     //var context = new Context();
     var str = myserializer.serialize(block.parentThatIsA(IDE_Morph).stage);
-    var jobj = x2js.xml_str2json(str)
+    var jobj = x2js.xml_str2json(str);
     //console.log(str);
     inside(jobj);
 
