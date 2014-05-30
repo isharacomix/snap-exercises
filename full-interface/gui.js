@@ -3607,9 +3607,10 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
         if (Process.prototype.isCatchingErrors) {
             try {
                 menu = this.showMessage('Exporting');
-                str = encodeURIComponent(
-                    this.serializer.serialize(this.stage)
-                );
+                //str = encodeURIComponent(
+                //    this.serializer.serialize(this.stage)
+                //);
+                str = this.serializer.serialize(this.stage);
 
                 //window.open('data:text/xml,' + str);
                 console.log(str);
@@ -3623,9 +3624,10 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
             }
         } else {
             menu = this.showMessage('Exporting');
-            str = encodeURIComponent(
-                this.serializer.serialize(this.stage)
-            );
+            //str = encodeURIComponent(
+            //    this.serializer.serialize(this.stage)
+            //);
+            str = this.serializer.serialize(this.stage);
 
             //window.open('data:text/xml,' + str);
             console.log(str);
