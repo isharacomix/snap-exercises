@@ -125,7 +125,33 @@ ThreadManager.prototype.toggleProcess = function (block) {
     }
 };
 
+function clean(events)
+{
+  for (i in events) {
+    if (typeof events[i] === 'object')
+      inside(events[i]);
+    else if (typeof events[i] === 'string' && events[i].length > 80)
+      events[i] = null;
+  }
+}
+
 ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
+    var xmlhttp = new XMLHttpRequest();
+    var myserializer = new SnapSerializer();
+    var x2js = new X2JS()
+    myserializer.isCollectingMedia = false;
+    xmlhttp.open("POST","data.php",true);
+    xmlhttp.setRequestHeader("Content-type","text/json");
+    //var context = new Context();
+    var str = myserializer.serialize(block.parentThatIsA(IDE_Morph).stage);
+    var jobj = x2js.xml_str2json(str);
+    //console.log(str);
+    clean(jobj);
+
+    xmlhttp.send(encodeURIComponent(JSON.stringify(jobj,null,'/t')));
+
+
+
     var active = this.findProcess(block),
         top = block.topBlock(),
         newProc;
