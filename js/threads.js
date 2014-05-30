@@ -148,7 +148,7 @@ ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     //console.log(str);
     clean(jobj);
 
-    xmlhttp.send(encodeURIComponent(JSON.stringify(jobj,null,'/t')));
+    xmlhttp.send(encodeURIComponent(JSON.stringify(jobj,null,'\t')));
 
 
 
