@@ -3612,7 +3612,7 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
                 );
 
                 //window.open('data:text/xml,' + str);
-                window.open('data:text/json,' + x2js.xml_str2json(str).toString());
+                window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
 
                 menu.destroy();
                 this.showMessage('Exported!', 1);
@@ -3625,9 +3625,9 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
             str = encodeURIComponent(
                 this.serializer.serialize(this.stage)
             );
-            
+
             //window.open('data:text/xml,' + str);
-            window.open('data:text/json,' + x2js.xml_str2json(str).toString());
+            window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
 
             menu.destroy();
             this.showMessage('Exported!', 1);
