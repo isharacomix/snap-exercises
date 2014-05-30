@@ -62,10 +62,11 @@ function partial_load_xml(answer, ownXML) {
   }
   $(myXML).find('hidden').text($(otherXML).find('hidden').text());
   var project = myXML.getElementsByTagName('project')[0];
+  var oproject = otherXML.getElementsByTagName('project')[0];
   var newBlocksNode = myXML.createElement('new');
   newBlocksNode.appendChild(myXML.createTextNode(newBlocks.join(' ')));
   project.appendChild(newBlocksNode);
-  project.setAttribute("name","food");;
+  project.setAttribute("name",otherXML.getAttribute("name"));
   var str = xmlToString(myXML);
   load_project_xml(str);
   return str;
