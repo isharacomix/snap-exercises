@@ -140,22 +140,6 @@ function check_lg_buttons () {
   }
 }
 
-var btn_to_name = [
-  "hello1",
-  "hello2",
-  "hello3",
-  "hello4",
-  "freeplay",
-  ];
-
-var idx_to_title = [
-  "",
-  "",
-  "",
-  "",
-  "",
-  ];
-
 var btn_to_left = [
   ];
 
@@ -312,7 +296,6 @@ function next_lesson() {
 
 function prepare_modal(idx, callback) {
   load_left(idx, function (leftText) {
-    $('.modal-title').html(idx_to_title[idx]);
     $.ajax({
       url : "modaltext/" + btn_to_name[idx] + "_modal.html",
       dataType: "text",
