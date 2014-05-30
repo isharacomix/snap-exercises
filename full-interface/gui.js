@@ -3611,8 +3611,8 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
                     this.serializer.serialize(this.stage)
                 );
 
-                //window.open('data:text/xml,' + str);
-                window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
+                window.open('data:text/xml,' + str);
+                //window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
 
                 menu.destroy();
                 this.showMessage('Exported!', 1);
@@ -3626,8 +3626,8 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
                 this.serializer.serialize(this.stage)
             );
 
-            //window.open('data:text/xml,' + str);
-            window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
+            window.open('data:text/xml,' + str);
+            //window.open('data:text/json,' + JSON.stringify(x2js.xml_str2json(str)));
 
             menu.destroy();
             this.showMessage('Exported!', 1);
