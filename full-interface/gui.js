@@ -3618,7 +3618,7 @@ function inside(events)
   for (i in events) {
     if (typeof events[i] === 'object')
       inside(events[i]);
-    else if (typeof events[i] === 'string' and events[i].length > 80)
+    else if (typeof events[i] === 'string' && events[i].length > 80)
       events[i] = null;
 }
 inside(jobj);
@@ -3645,7 +3645,7 @@ function inside(events)
   for (i in events) {
     if (typeof events[i] === 'object')
       inside(events[i]);
-    else if (typeof events[i] === 'string' and events[i].length > 80)
+    else if (typeof events[i] === 'string' && events[i].length > 80)
       events[i] = null;
 }
 inside(jobj);
