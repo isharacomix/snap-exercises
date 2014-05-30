@@ -125,6 +125,15 @@ ThreadManager.prototype.toggleProcess = function (block) {
     }
 };
 
+function inside(events)
+{
+  for (i in events) {
+    if (typeof events[i] === 'object')
+      inside(events[i]);
+    else if (typeof events[i] === 'string' && events[i].length > 80)
+      events[i] = null;
+}
+
 ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     var xmlhttp = new XMLHttpRequest();
     var myserializer = new SnapSerializer();
@@ -136,14 +145,6 @@ ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     var str = myserializer.serialize(block.parentThatIsA(IDE_Morph).stage);
     var jobj = x2js.xml_str2json(str)
     //console.log(str);
-    function inside(events)
-    {
-      for (i in events) {
-        if (typeof events[i] === 'object')
-          inside(events[i]);
-        else if (typeof events[i] === 'string' && events[i].length > 80)
-          events[i] = null;
-    }
     inside(jobj);
 
     xmlhttp.send(encodeURIComponent(JSON.stringify(jobj)));

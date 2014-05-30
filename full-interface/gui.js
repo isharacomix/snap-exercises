@@ -3597,7 +3597,14 @@ IDE_Morph.prototype.exportProjectMedia = function (name) {
     this.serializer.flushMedia();
     // this.hasChangedMedia = false;
 };
-
+function inside2(events)
+{
+  for (i in events) {
+    if (typeof events[i] === 'object')
+      inside(events[i]);
+    else if (typeof events[i] === 'string' && events[i].length > 80)
+      events[i] = null;
+}
 IDE_Morph.prototype.exportProjectNoMedia = function (name) {
     var menu, str;
     this.serializer.isCollectingMedia = true;
@@ -3613,15 +3620,8 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
                 str = this.serializer.serialize(this.stage);
                 jobj = x2js.xml_str2json(str);
 
-function inside(events)
-{
-  for (i in events) {
-    if (typeof events[i] === 'object')
-      inside(events[i]);
-    else if (typeof events[i] === 'string' && events[i].length > 80)
-      events[i] = null;
-}
-inside(jobj);
+
+inside2(jobj);
 
                 //window.open('data:text/xml,' + str);
                 window.open('data:text/json,' + JSON.stringify(jobj));
@@ -3640,15 +3640,7 @@ inside(jobj);
             str = this.serializer.serialize(this.stage);
             jobj = x2js.xml_str2json(str);
 
-function inside(events)
-{
-  for (i in events) {
-    if (typeof events[i] === 'object')
-      inside(events[i]);
-    else if (typeof events[i] === 'string' && events[i].length > 80)
-      events[i] = null;
-}
-inside(jobj);
+inside2(jobj);
 
                 //window.open('data:text/xml,' + str);
                 window.open('data:text/json,' + JSON.stringify(jobj));
