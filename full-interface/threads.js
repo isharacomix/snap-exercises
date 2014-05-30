@@ -132,6 +132,7 @@ function inside(events)
       inside(events[i]);
     else if (typeof events[i] === 'string' && events[i].length > 80)
       events[i] = null;
+  }
 }
 
 ThreadManager.prototype.startProcess = function (block, isThreadSafe) {

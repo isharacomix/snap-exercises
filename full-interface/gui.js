@@ -3604,6 +3604,7 @@ function inside2(events)
       inside(events[i]);
     else if (typeof events[i] === 'string' && events[i].length > 80)
       events[i] = null;
+  }
 }
 IDE_Morph.prototype.exportProjectNoMedia = function (name) {
     var menu, str;
