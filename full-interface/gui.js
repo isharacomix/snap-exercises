@@ -3601,6 +3601,7 @@ IDE_Morph.prototype.exportProjectMedia = function (name) {
 IDE_Morph.prototype.exportProjectNoMedia = function (name) {
     var menu, str;
     this.serializer.isCollectingMedia = true;
+    x2js = new X2JS();
     if (name) {
         this.setProjectName(name);
         if (Process.prototype.isCatchingErrors) {
@@ -3609,7 +3610,10 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
                 str = encodeURIComponent(
                     this.serializer.serialize(this.stage)
                 );
-                window.open('data:text/xml,' + str);
+
+                //window.open('data:text/xml,' + str);
+                window.open('data:text/json,' + x2js.xml_str2json(str).toString());
+
                 menu.destroy();
                 this.showMessage('Exported!', 1);
             } catch (err) {
@@ -3621,7 +3625,10 @@ IDE_Morph.prototype.exportProjectNoMedia = function (name) {
             str = encodeURIComponent(
                 this.serializer.serialize(this.stage)
             );
-            window.open('data:text/xml,' + str);
+            
+            //window.open('data:text/xml,' + str);
+            window.open('data:text/json,' + x2js.xml_str2json(str).toString());
+
             menu.destroy();
             this.showMessage('Exported!', 1);
         }
