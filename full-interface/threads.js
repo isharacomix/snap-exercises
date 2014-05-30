@@ -129,7 +129,7 @@ function clean(events)
 {
   for (i in events) {
     if (typeof events[i] === 'object')
-      inside(events[i]);
+      clean(events[i]);
     else if (typeof events[i] === 'string' && events[i].length > 80)
       events[i] = null;
   }
