@@ -250,7 +250,7 @@ function btn_click () {
   }
   else {
     $('#corral-cover').removeClass('my-hidden');
-    if (index >= 4) {
+    if (index >= startvariables) {
       document.getElementById('snap').contentWindow.show_make_a_variable = true;
     }
     else {
