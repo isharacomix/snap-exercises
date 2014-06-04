@@ -252,7 +252,7 @@ SnapSerializer.uber = XML_Serializer.prototype;
 
 // SnapSerializer constants:
 
-SnapSerializer.prototype.app = 'Snap! 4.0, http://snap.berkeley.edu';
+SnapSerializer.prototype.app = 'HourOfCode';
 
 SnapSerializer.prototype.thumbnailSize = new Point(160, 120);
 
@@ -1364,7 +1364,7 @@ StageMorph.prototype.toXML = function (serializer) {
             '<variables>%</variables>' +
             '</project>',
         (ide && ide.projectName) ? ide.projectName : 'Untitled',
-        serializer.app,
+        serializer.app,,
         serializer.version,
         (ide && ide.projectNotes) ? ide.projectNotes : '',
         thumbdata,
