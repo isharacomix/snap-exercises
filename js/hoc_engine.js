@@ -25,7 +25,7 @@ function load_project_uri(uri, callback) {
 }
 
 function load_project_xml(text) {
-  return document.getElementById('snap').contentWindow.load_project_xml(text, btn_to_name[current_lesson]);
+  return document.getElementById('snap').contentWindow.load_project_xml(text);
 }
 
 function export_project_xml() {

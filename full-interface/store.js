@@ -1349,7 +1349,7 @@ StageMorph.prototype.toXML = function (serializer) {
             '<variables>%</variables>' +
             '</project>',
         (ide && ide.projectName) ? ide.projectName : 'Untitled',
-        (ide && ide.app) ? ide.app: serializer.app,
+        serializer.app,
         serializer.version,
         (ide && ide.projectNotes) ? ide.projectNotes : '',
         thumbdata,

@@ -36,14 +36,14 @@ When developing an exercise in XML, you can hide blocks by putting their technic
 
 How to collect data
 -------------------
-If this repository is hosted on a server with PHP support, each time a student runs their program, a snapshot of their program formatted in JSON will be saved to the folder '''/flatfiles/''' (make sure PHP can write to that folder!). Files are saved in the format '''XXXXXX_YYYYYY_ZZZZZZ.txt''' where X is a hash of the user's IP address, Y is a random session ID, and Z is the timestamp.
+If this repository is hosted on a server with PHP support, each time a student runs their program, a snapshot of their program formatted in JSON will be saved to the folder ```/flatfiles/``` (make sure PHP can write to that folder!). Files are saved in the format ```XXXXXX_YYYYYY_ZZZZZZ.txt``` where X is a hash of the user's IP address, Y is a random session ID, and Z is the timestamp.
 
 When collecting data, be sure that you put a unique identifier in the 'name' field of the exercises so that you can distinguish between which activities the snapshots are coming from.
 
 
 Host on Github Pages
 --------------------
-If you clone this repository, you can go directly to '''USERNAME.github.io/snap-exercises''' to try out your exercises and share them with others. Note that because github does not support php, you can not collect user data this way.
+If you clone this repository, you can go directly to ```USERNAME.github.io/snap-exercises``` to try out your exercises and share them with others. Note that because github does not support php, you can not collect user data this way.
 
 
 [SNAP]: http://snap.berkeley.edu
