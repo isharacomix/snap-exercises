@@ -230,6 +230,7 @@ function btn_click () {
   var index = parseInt($(this).data('index'));
   var name = btn_to_name[index];
   var first_click_copy = first_click;
+  SnapSerializer.prototype.app = "app_"+name;
   $('.btn-top').eq(current_lesson).button('toggle');
   if (index === btn_to_name.length - 1) {
     $('#corral-cover').addClass('my-hidden');
