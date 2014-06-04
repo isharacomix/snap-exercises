@@ -2271,8 +2271,8 @@ IDE_Morph.prototype.projectMenu = function () {
             } else {
                 myself.saveProjectsBrowser();
             }
-        }*/
-    );
+        }
+    );*/
     /*if (shiftClicked) {
         menu.addItem(
             'Save to disk',
