@@ -38,8 +38,8 @@
 			var world;
             var ide;
 
-            function load_project_xml(xml) {
-					SnapSerializer.prototype.app  = "app_"+name;
+            function load_project_xml(xml, realname) {
+					SnapSerializer.prototype.app  = "app_"+realname;
                     window.ide.droppedText(xml);
             }
 
