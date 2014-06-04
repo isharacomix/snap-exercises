@@ -38,8 +38,8 @@
 			var world;
             var ide;
 
-            function load_project_xml(xml) {
-					ide.serializer.app = name;
+            function load_project_xml(xml, appname) {
+					ide.serializer.app = appname;
                     window.ide.droppedText(xml);
             }
 
