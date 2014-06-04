@@ -25,7 +25,7 @@ function load_project_uri(uri, callback) {
 }
 
 function load_project_xml(text) {
-  return document.getElementById('snap').contentWindow.load_project_xml(text, "POTPAT");
+  return document.getElementById('snap').contentWindow.load_project_xml(text);
 }
 
 function export_project_xml() {
@@ -41,9 +41,7 @@ function xmlToString(xmlData) {
     }
     // code for Mozilla, Firefox, Opera, etc.
     else{
-        cerial = new XMLSerializer();
-        cerial.app = "app_"+name;
-        xmlString = (cerial).serializeToString(xmlData);
+        xmlString = (new XMLSerializer()).serializeToString(xmlData);
     }
     return xmlString;
 }

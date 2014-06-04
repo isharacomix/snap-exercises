@@ -38,8 +38,8 @@
 			var world;
             var ide;
 
-            function load_project_xml(xml, appname) {
-					ide.serializer.app = appname;
+            function load_project_xml(xml) {
+					SNAPserializer.prototype.app = "PTOATO";
                     window.ide.droppedText(xml);
             }
 
