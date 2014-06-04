@@ -252,7 +252,7 @@ SnapSerializer.uber = XML_Serializer.prototype;
 
 // SnapSerializer constants:
 
-SnapSerializer.prototype.app = "FREEPLAY";
+//SnapSerializer.prototype.app = "FREEPLAY";
 
 SnapSerializer.prototype.thumbnailSize = new Point(160, 120);
 
