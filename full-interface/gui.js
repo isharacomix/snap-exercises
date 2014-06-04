@@ -1912,7 +1912,7 @@ IDE_Morph.prototype.cloudMenu = function () {
         shiftClicked = (world.currentKey === 16);
 
     menu = new MenuMorph(this);
-    if (shiftClicked) {
+    /*if (shiftClicked) {
         menu.addItem(
             'url...',
             'setCloudURL',
@@ -1943,10 +1943,10 @@ IDE_Morph.prototype.cloudMenu = function () {
             'Change Password...',
             'changeCloudPassword'
         );
-    }
+    }*/
     if (shiftClicked) {
         menu.addLine();
-        menu.addItem(
+        /*menu.addItem(
             'export project media only...',
             function () {
                 if (myself.projectName) {
@@ -1959,7 +1959,7 @@ IDE_Morph.prototype.cloudMenu = function () {
             },
             null,
             this.hasChangedMedia ? new Color(100, 0, 0) : new Color(0, 100, 0)
-        );
+        );*/
         menu.addItem(
             'export project without media...',
             function () {
@@ -1974,7 +1974,7 @@ IDE_Morph.prototype.cloudMenu = function () {
             null,
             new Color(100, 0, 0)
         );
-        menu.addItem(
+        /*menu.addItem(
             'export project as cloud data...',
             function () {
                 if (myself.projectName) {
@@ -2034,7 +2034,7 @@ IDE_Morph.prototype.cloudMenu = function () {
             },
             null,
             new Color(100, 0, 0)
-        );
+        );*/
     }
     menu.popup(world, pos);
 };
@@ -2243,7 +2243,7 @@ IDE_Morph.prototype.projectMenu = function () {
     menu = new MenuMorph(this);
     menu.addItem('Project notes...', 'editProjectNotes');
     menu.addLine();
-    menu.addItem(
+    /*menu.addItem(
         'New',
         function () {
             myself.confirm(
@@ -2254,9 +2254,9 @@ IDE_Morph.prototype.projectMenu = function () {
                 }
             );
         }
-    );
-    menu.addItem('Open...', 'openProjectsBrowser');
-    menu.addItem(
+    );*/
+    //menu.addItem('Open...', 'openProjectsBrowser');
+    /*menu.addItem(
         'Save',
         function () {
             if (myself.source === 'examples') {
@@ -2271,18 +2271,18 @@ IDE_Morph.prototype.projectMenu = function () {
             } else {
                 myself.saveProjectsBrowser();
             }
-        }
+        }*/
     );
-    if (shiftClicked) {
+    /*if (shiftClicked) {
         menu.addItem(
             'Save to disk',
             'saveProjectToDisk',
             'experimental - store this project\nin your downloads folder',
             new Color(100, 0, 0)
         );
-    }
-    menu.addItem('Save As...', 'saveProjectsBrowser');
-    menu.addLine();
+    }*/
+    //menu.addItem('Save As...', 'saveProjectsBrowser');
+    //menu.addLine();
     menu.addItem(
         'Import...',
         function () {
@@ -2340,7 +2340,7 @@ IDE_Morph.prototype.projectMenu = function () {
     );
 
     menu.addLine();
-    menu.addItem(
+    /*menu.addItem(
         'Import tools',
         function () {
             myself.droppedText(
@@ -2351,8 +2351,8 @@ IDE_Morph.prototype.projectMenu = function () {
             );
         },
         'load the official library of\npowerful blocks'
-    );
-    menu.addItem(
+    );*/
+    /*menu.addItem(
         'Libraries...',
         function () {
             // read a list of libraries from an external file,
@@ -2383,7 +2383,7 @@ IDE_Morph.prototype.projectMenu = function () {
             libMenu.popup(world, pos);
         },
         'Select categories of additional blocks to add to this project.'
-    );
+    );*/
 
     menu.popup(world, pos);
 };

@@ -13,6 +13,7 @@ How to make exercises
 ---------------------
 Exercises are located in the '''/lessons/''' folder. To create a new lesson, create a folder for your new lesson and copy the '''index.html''' from one of the other lessons. Then, create a file named '''listing.js''' that contains the following code.
 
+    var startvariables = 2;
     var btn_to_name = [
       "part1",
       "part2",
@@ -21,16 +22,16 @@ Exercises are located in the '''/lessons/''' folder. To create a new lesson, cre
       "freeplay",
       ];
 
-Each string in this array represents one of the steps in your exercise, and each step requires a file that represents how the exercise is displayed.
+Each string in this array represents one of the steps in your exercise, and each step requires a file that represents how the exercise is displayed. The variable ```startvariables``` indicates at what point in the lesson the student should be able to create their own variables.
 
- * '''answers/part1.png''': The solution to the problem, as an image
- * '''lefttext/part1.html''': The writeup that appears to the left of Snap
- * '''modaltext/part1_modal.html''': The popup that appears when the problem begins
- * '''xml/part1.xml''': The problem specs.
+ * ```answers/part1.png``` The solution to the problem, as an image
+ * ```lefttext/part1.html``` The writeup that appears to the left of Snap
+ * ```modaltext/part1_modal.html``` The popup that appears when the problem begins
+ * ```xml/part1.xml``` The problem specs.
 
 The last exercise should always be a "free-play" exercise that students work on after they complete their work, but you can customize the pop-up/left-text to encourage them to continue creating animations in a certain way.
 
-When developing an exercise in XML, you can hide blocks by putting their technical names in the &lt;hidden&gt; section, and you can also create custom blocks. The easiest way to go about this is to start with the '''example.xml''' (which has all blocks hidden by default) and remove the blocks you want students to be allowed to use. You should also updated the 'name' and 'app' fields to be unique.
+When developing an exercise in XML, you can hide blocks by putting their technical names in the &lt;hidden&gt; section, and you can also create custom blocks. The easiest way to go about this is to start with the ```example.xml``` (which has all blocks hidden by default) and remove the blocks you want students to be allowed to use. You should also updated the 'name' and 'app' fields to be unique.
 
 
 How to collect data
