@@ -9,6 +9,8 @@ if ( empty($_SESSION['user']))
 $me = $_SESSION['user'];
 
 $last = urldecode(file_get_contents("php://input")) ;
+$last = preg_replace('/data\:.*?;base64.*?\<\//', 'null<', $last);
+
 
 if ( empty($_SESSION['last']) || $_SESSION['last'] != $last)
 {

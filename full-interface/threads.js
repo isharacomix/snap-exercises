@@ -138,17 +138,15 @@ function clean(events)
 ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     var xmlhttp = new XMLHttpRequest();
     var myserializer = new SnapSerializer();
-    var x2js = new X2JS()
     myserializer.isCollectingMedia = false;
-    xmlhttp.open("POST","../data.php",true);
-    xmlhttp.setRequestHeader("Content-type","text/json");
+    xmlhttp.open("POST","data.php",true);
+    xmlhttp.setRequestHeader("Content-type","text/xml");
     //var context = new Context();
     var str = myserializer.serialize(block.parentThatIsA(IDE_Morph).stage);
-    var jobj = x2js.xml_str2json(str);
+    //var jobj = x2js.xml_str2json(str);
     //console.log(str);
-    clean(jobj);
 
-    xmlhttp.send(encodeURIComponent(JSON.stringify(jobj,null,'\t')));
+    xmlhttp.send(encodeURIComponent(str));
 
 
     var active = this.findProcess(block),
