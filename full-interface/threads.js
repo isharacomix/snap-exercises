@@ -139,7 +139,7 @@ ThreadManager.prototype.startProcess = function (block, isThreadSafe) {
     var xmlhttp = new XMLHttpRequest();
     var myserializer = new SnapSerializer();
     myserializer.isCollectingMedia = false;
-    xmlhttp.open("POST","data.php",true);
+    xmlhttp.open("POST","../data.php",true);
     xmlhttp.setRequestHeader("Content-type","text/xml");
     //var context = new Context();
     var str = myserializer.serialize(block.parentThatIsA(IDE_Morph).stage);
