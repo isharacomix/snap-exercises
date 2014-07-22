@@ -1,5 +1,5 @@
-var startvariables = 5;
-var startfull = 5;
+var startvariables = 4;
+var startfull = 4;
 var btn_to_name = [
   "welcome1",
   "welcome2",
