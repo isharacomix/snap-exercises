@@ -256,6 +256,13 @@ function btn_click () {
     else {
       document.getElementById('snap').contentWindow.show_make_a_variable = false;
     }
+
+    if (index >= startfull) {
+        $('#snap').attr('src', '../../full-interface/snap.html');
+    }
+    else {
+        $('#snap').attr('src', '../../snap.html');
+    }
     // If this is the first click, then the project has already been loaded.
     if (!first_click) {
       get_proj_xml ( "xml/" + name + ".xml", partial_load_xml);

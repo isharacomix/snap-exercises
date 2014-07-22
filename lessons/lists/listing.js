@@ -1,4 +1,5 @@
 var startvariables = 2;
+var startfull = 6;
 var btn_to_name = [
   "list1",
   "list2",
