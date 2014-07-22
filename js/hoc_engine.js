@@ -249,6 +249,15 @@ function btn_click () {
     });
   }
   else {
+      if (index >= startfull) {
+          var xml = partial_load_xml(lastXML);
+          load_project_uri("xml/" + btn_to_name[index] + '.xml');
+          $('#snap').attr('src', '../../full-interface/snap.html');
+          $('#snap').load(function () {
+            load_project_xml(xml);
+          });
+      }
+
     $('#corral-cover').removeClass('my-hidden');
     if (index >= startvariables) {
       document.getElementById('snap').contentWindow.show_make_a_variable = true;
@@ -257,9 +266,6 @@ function btn_click () {
       document.getElementById('snap').contentWindow.show_make_a_variable = false;
     }
 
-    if (index >= startfull) {
-        $('#snap').attr('src', '../../full-interface/snap.html');
-    }
     // If this is the first click, then the project has already been loaded.
     if (!first_click) {
       get_proj_xml ( "xml/" + name + ".xml", partial_load_xml);
