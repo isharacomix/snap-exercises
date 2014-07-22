@@ -231,7 +231,7 @@ function btn_click () {
   var name = btn_to_name[index];
   var first_click_copy = first_click;
   $('.btn-top').eq(current_lesson).button('toggle');
-  if (index === btn_to_name.length - 1) {
+  if (index >= startfull) {
     $('#corral-cover').addClass('my-hidden');
     get_proj_xml ( "xml/" + name + ".xml", function (lastXML) {
       var xml = partial_load_xml(lastXML);
@@ -249,14 +249,6 @@ function btn_click () {
     });
   }
   else {
-      if (index >= startfull) {
-          var xml = partial_load_xml(lastXML);
-          load_project_uri("xml/" + btn_to_name[index] + '.xml');
-          $('#snap').attr('src', '../../full-interface/snap.html');
-          $('#snap').load(function () {
-            load_project_xml(xml);
-          });
-      }
 
     $('#corral-cover').removeClass('my-hidden');
     if (index >= startvariables) {
