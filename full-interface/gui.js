@@ -2628,6 +2628,16 @@ IDE_Morph.prototype.saveProject = function (name) {
     ]);
 };
 
+var downloadFile = function(filename, content) {
+  var blob = new Blob([content]);
+  var evt = document.createEvent("HTMLEvents");
+  evt.initEvent("click");
+  $("<a>", {
+    download: filename,
+    href: webkitURL.createObjectURL(blob)
+  }).get(0).dispatchEvent(evt);
+};
+
 IDE_Morph.prototype.rawSaveProject = function (name) {
     var str;
     if (name) {
@@ -2690,8 +2700,9 @@ IDE_Morph.prototype.exportProject = function (name, plain) {
                     this.serializer.serialize(this.stage)
                 );
                 location.hash = '#open:' + str;
-                window.open('data:text/'
-                    + (plain ? 'plain,' + str : 'xml,' + str));
+                //window.open('data:text/'
+                //    + (plain ? 'plain,' + str : 'xml,' + str));
+                downloadFile(name+".xml", 'data:text/'+(plain ? 'plain,' + str : 'xml,' + str));
                 menu.destroy();
                 this.showMessage('Exported!', 1);
             } catch (err) {
@@ -2702,9 +2713,9 @@ IDE_Morph.prototype.exportProject = function (name, plain) {
             str = encodeURIComponent(
                 this.serializer.serialize(this.stage)
             );
-            location.hash = '#open:' + str;
-            window.open('data:text/'
-                + (plain ? 'plain,' + str : 'xml,' + str));
+//window.open('data:text/'
+                //    + (plain ? 'plain,' + str : 'xml,' + str));
+                downloadFile(name+".xml", 'data:text/'+(plain ? 'plain,' + str : 'xml,' + str));
             menu.destroy();
             this.showMessage('Exported!', 1);
         }
