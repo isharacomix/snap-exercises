@@ -2317,7 +2317,7 @@ IDE_Morph.prototype.projectMenu = function () {
         'file menu import hint' // looks up the actual text in the translator
     );
 
-    menu.addItem(
+    /*menu.addItem(
         shiftClicked ?
                 'Export project as plain text...' : 'Export project...',
         function () {
@@ -2331,7 +2331,7 @@ IDE_Morph.prototype.projectMenu = function () {
         },
         'show project data as XML\nin a new browser window',
         shiftClicked ? new Color(100, 0, 0) : null
-    );
+    );*/
 
     menu.addItem(
         'Export blocks...',
