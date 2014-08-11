@@ -1960,7 +1960,7 @@ IDE_Morph.prototype.cloudMenu = function () {
             null,
             this.hasChangedMedia ? new Color(100, 0, 0) : new Color(0, 100, 0)
         );*/
-        menu.addItem(
+        /*menu.addItem(
             'export project without media...',
             function () {
                 if (myself.projectName) {
@@ -1973,7 +1973,7 @@ IDE_Morph.prototype.cloudMenu = function () {
             },
             null,
             new Color(100, 0, 0)
-        );
+        );*/
         /*menu.addItem(
             'export project as cloud data...',
             function () {
@@ -2273,14 +2273,14 @@ IDE_Morph.prototype.projectMenu = function () {
             }
         }
     );*/
-    /*if (shiftClicked) {
+    
         menu.addItem(
             'Save to disk',
             'saveProjectToDisk',
-            'experimental - store this project\nin your downloads folder',
+            'store this project\nin your downloads folder',
             new Color(100, 0, 0)
         );
-    }*/
+    
     //menu.addItem('Save As...', 'saveProjectsBrowser');
     //menu.addLine();
     menu.addItem(
@@ -2317,7 +2317,7 @@ IDE_Morph.prototype.projectMenu = function () {
         'file menu import hint' // looks up the actual text in the translator
     );
 
-    menu.addItem(
+    /*menu.addItem(
         shiftClicked ?
                 'Export project as plain text...' : 'Export project...',
         function () {
@@ -2331,7 +2331,7 @@ IDE_Morph.prototype.projectMenu = function () {
         },
         'show project data as XML\nin a new browser window',
         shiftClicked ? new Color(100, 0, 0) : null
-    );
+    );*/
 
     menu.addItem(
         'Export blocks...',
@@ -2628,6 +2628,7 @@ IDE_Morph.prototype.saveProject = function (name) {
     ]);
 };
 
+
 IDE_Morph.prototype.rawSaveProject = function (name) {
     var str;
     if (name) {
@@ -2692,6 +2693,7 @@ IDE_Morph.prototype.exportProject = function (name, plain) {
                 location.hash = '#open:' + str;
                 window.open('data:text/'
                     + (plain ? 'plain,' + str : 'xml,' + str));
+                //downloadFile(name+".xml", 'data:text/'+(plain ? 'plain,' + str : 'xml,' + str));
                 menu.destroy();
                 this.showMessage('Exported!', 1);
             } catch (err) {
@@ -2702,9 +2704,9 @@ IDE_Morph.prototype.exportProject = function (name, plain) {
             str = encodeURIComponent(
                 this.serializer.serialize(this.stage)
             );
-            location.hash = '#open:' + str;
-            window.open('data:text/'
-                + (plain ? 'plain,' + str : 'xml,' + str));
+window.open('data:text/'
+                    + (plain ? 'plain,' + str : 'xml,' + str));
+                downloadFile(name+".xml", 'data:text/'+(plain ? 'plain,' + str : 'xml,' + str));
             menu.destroy();
             this.showMessage('Exported!', 1);
         }
