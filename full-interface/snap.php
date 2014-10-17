@@ -107,7 +107,7 @@ else
 
 <form action="" method="post">
 Username <input type="text" name="username"></input>
-<input type="submit">Start programming!</input>
+<input type="submit" value="Start programming!"></input>
 </form>
 </body>
 </html>
