@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if (isset($_POST['username']))
 {
 	$_SESSION['username'] = preg_replace('/[^a-z\d ]/i', '', $_POST['username']);
