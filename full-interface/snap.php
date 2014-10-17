@@ -3,7 +3,7 @@
 if (isset($_POST['username']))
 {
 	$_SESSION['username'] = preg_replace('/[^a-z\d ]/i', '', $_POST['username']);
-	header( 'Location: snap.html' );
+	header( 'Location: snap.php' );
 }
 
 
