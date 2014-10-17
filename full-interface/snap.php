@@ -1,5 +1,12 @@
 <?php
 
+if (isset($_POST['username']))
+{
+	$_SESSION['username'] = preg_replace('/[^a-z\d ]/i', '', $_POST['username']);
+	header( 'Location: snap.html' );
+}
+
+
 if (isset($_SESSION['username']))
 {
 
@@ -90,8 +97,18 @@ else
 
 
 ?>
+<html>
+<body>
+<h1>Welcome to SNAP!</h1>
 
-hi
+<p>Please enter your username!</p>
+
+<form action="" method="post">
+Username <input type="text" name="username">
+<input type="submit">
+</form>
+</body>
+</html>
 
 <?php
 
