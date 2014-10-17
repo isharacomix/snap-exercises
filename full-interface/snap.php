@@ -106,8 +106,8 @@ else
 <p>Please enter your username!</p>
 
 <form action="" method="post">
-Username <input type="text" name="username">
-<input type="submit">
+Username <input type="text" name="username"></input>
+<input type="submit">Start programming!</input>
 </form>
 </body>
 </html>
